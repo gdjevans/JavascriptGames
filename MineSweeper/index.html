@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Mine Sweeper Game</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <h1>Mine Sweeper Game</h1>
+
+    <select id="mode-setting"></select>
+    <button id="gamebtn" type="button" onclick="setupGame()">
+      New Game
+    </button>
+
+    <div id="wrapper">
+      <div id="gameTimer">
+        <h4>Time:</h4>
+        <span id="game-timer">0</span>
+      </div>
+      <br/>
+      <div id="gameBombRemaining">
+        <h4>Bombs Remaining:</h4>
+        <span id="game-bombs-remaining"></span>
+      </div>
+      <br/>
+  </div>
+    <script>
+        const CONFIG = {
+            mode: {
+                easy:{
+                   name: "Easy",
+                   size: {
+                       rows: 10,
+                       cols: 10,
+                   },
+                   bombs: 10 
+                },
+                medium:{
+                   name: "Medium",
+                   size: {
+                       rows: 20,
+                       cols: 20,
+                   },
+                   bombs: 50 
+                },
+                hard:{
+                   name: "Hard",
+                   size: {
+                       rows: 20,
+                       cols: 30,
+                   },
+                   bombs: 100 
+                },
+            },
+
+            //Current Mode
+            currentMode: "easy",
+
+            //Bomb Locations
+            bombLocations: [],
+
+            //Game is playable
+            gamePlayable: true,
+        }
+    </script>
+
+    <hr/>
+
+    <table id="game-table"></table>
+
+    <script src="app.min.js" async defer></script>
+  </body>
+</html>
