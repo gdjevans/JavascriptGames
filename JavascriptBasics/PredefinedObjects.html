@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Predefined Objects</title>
+    <script>
+
+        // Navigator Objects
+        //window.navigator.PROPERTY
+        window.alert("Your browser is :" + navigator.appName);
+       // window.
+
+       if(navigator.appName == "Microsoft Internet Explorer"){
+           document.write("Welcome IE Users");
+       }
+       else{
+           document.write("You need IE to run this script");
+       }
+
+       if(navigator.javaEnabled()){
+           document.write("Java is enabled");
+       }else{
+           alert("Java is not enabled on this computer.")
+       }
+
+       //HISTORY OBJECT
+       alert("My browser has visited :" + history.length + " pages.");
+
+       alert(history.back());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
