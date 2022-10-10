@@ -14,6 +14,22 @@
 			$scope.totalQuestions = $scope.myQuestions.length;
 		});
 
+		$scope.selectAnswer = function(qIndex,aIndex){
+			var questionState = $scope.myQuestions[qIndex].questionState;
+
+			if( questionState != 'answered' ){
+				$scope.myQuestions[qIndex].selectedAnswer = aIndex;
+				var correctAnswer = $scope.myQuestions[qIndex].correct;
+
+				if( aIndex === correctAnswer ){
+					$scope.myQuestions[qIndex].correctness = 'correct';
+					$scope.score += 1;
+				}else{
+					$scope.myQuestions[qIndex].correctness = 'incorrect';
+				}
+				$scope.myQuestions[qIndex].questionState = 'answered';
+			}
+		}
 
 	}]);
 
