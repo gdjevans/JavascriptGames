@@ -18,6 +18,7 @@
 
         const BRICK_W = 100;
         const BRICK_H = 50;
+        const BRICK_GAP = 2;
         const BRICK_COUNT = 4;
         var brickGrid = new Array(BRICK_COUNT);
 
@@ -43,9 +44,13 @@
 
         function brickReset() {
             for(var i=0;i<BRICK_COUNT;i++) {
-                brickGrid[i] = true;
-            }
-        }
+                if(Math.random() < 0.5) {
+                    brickGrid[i] = true;
+                }else{
+                    brickGrid[i] = false;
+                } // end of else (rand check)
+            } // end of for for each brick
+        } // end of brickReset func
 
         window.onload = function() {
             canvas = document.getElementById('gameCanvas');
@@ -106,10 +111,10 @@
         function drawBricks() {
             for(var i=0;i<BRICK_COUNT; i++) {
                 if(brickGrid[i]) {
-                    colorRect(BRICK_W*i,0, BRICK_W-2, BRICK_H, 'blue');
-                } 
-            }
-        }
+                    colorRect(BRICK_W*i,0, BRICK_W-BRICK_GAP, BRICK_H, 'blue');
+                } // end of is this brick here
+            } // end of for each brick
+        } // end of drawBrick func
 
         function drawAll() {
             colorRect(0,0, canvas.width, canvas.height, 'black'); //clear screen
@@ -120,7 +125,9 @@
         
             drawBricks();
 
-            colorText(mouseX+","+mouseY, mouseX,mouseY, 'yellow');
+            var mouseBrickCol = mouseX / BRICK_W;
+            var mouseBrickRow = mouseY / BRICK_H;
+            colorText(mouseBrickCol+","+mouseBrickRow, mouseX,mouseY, 'yellow');
         
         }
 
