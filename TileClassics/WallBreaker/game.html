@@ -16,11 +16,12 @@
         var ballSpeedX = 5;
         var ballSpeedY = 7;
 
-        const BRICK_W = 100;
-        const BRICK_H = 50;
+        const BRICK_W = 80;
+        const BRICK_H = 20;
         const BRICK_GAP = 2;
-        const BRICK_COUNT = 4;
-        var brickGrid = new Array(BRICK_COUNT);
+        const BRICK_COLS = 10;
+        const BRICK_ROWS = 14;
+        var brickGrid = new Array(BRICK_COLS * BRICK_ROWS);
 
         const PADDLE_WIDTH = 100;
         const PADDLE_THICKNESS = 10;
@@ -43,7 +44,7 @@
         }
 
         function brickReset() {
-            for(var i=0;i<BRICK_COUNT;i++) {
+            for(var i=0;i<BRICK_COLS * BRICK_ROWS;i++) {
                 if(Math.random() < 0.5) {
                     brickGrid[i] = true;
                 }else{
@@ -109,11 +110,16 @@
         }
 
         function drawBricks() {
-            for(var i=0;i<BRICK_COUNT; i++) {
-                if(brickGrid[i]) {
-                    colorRect(BRICK_W*i,0, BRICK_W-BRICK_GAP, BRICK_H, 'blue');
-                } // end of is this brick here
-            } // end of for each brick
+            for(var eachRow=0;eachRow<BRICK_ROWS; eachRow++) {
+                for(var eachCol=0;eachCol<BRICK_COLS; eachCol++) {
+
+                    var arrayIndex = BRICK_COLS * eachRow + eachCol;
+                    if(brickGrid[arrayIndex]) {
+                        colorRect(BRICK_W*eachCol,BRICK_H*eachRow, 
+                        BRICK_W-BRICK_GAP, BRICK_H-BRICK_GAP, 'blue');
+                    } // end of is this brick here
+                } // end of for each brick
+            }
         } // end of drawBrick func
 
         function drawAll() {
@@ -125,8 +131,8 @@
         
             drawBricks();
 
-            var mouseBrickCol = mouseX / BRICK_W;
-            var mouseBrickRow = mouseY / BRICK_H;
+            var mouseBrickCol = Math.floor(mouseX / BRICK_W);
+            var mouseBrickRow = Math.floor(mouseY / BRICK_H);
             colorText(mouseBrickCol+","+mouseBrickRow, mouseX,mouseY, 'yellow');
         
         }
