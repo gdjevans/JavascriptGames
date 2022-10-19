@@ -45,11 +45,12 @@
 
         function brickReset() {
             for(var i=0;i<BRICK_COLS * BRICK_ROWS;i++) {
-                if(Math.random() < 0.5) {
+                /*if(Math.random() < 0.5) {
                     brickGrid[i] = true;
                 }else{
                     brickGrid[i] = false;
-                } // end of else (rand check)
+                }*/ // end of else (rand check)
+                brickGrid[i] = true;
             } // end of for for each brick
         } // end of brickReset func
 
@@ -93,6 +94,21 @@
                 //ballSpeedY *= -1;
             }
 
+            
+
+            var ballBrickCol = Math.floor(ballX / BRICK_W);
+            var ballBrickRow = Math.floor(ballY / BRICK_H);
+            var brickIndexUnderBall = rowColToArrayIndex(ballBrickCol, ballBrickRow);
+            //colorText(mouseBrickCol+","+mouseBrickRow+":"+brickIndexUnderMouse, mouseX,mouseY, 'yellow');
+        
+            if(ballBrickCol >= 0 && ballBrickCol < BRICK_COLS &&
+            ballBrickRow >= 0  && ballBrickRow < BRICK_ROWS) {
+                if(brickGrid[brickIndexUnderBall]) {
+                    brickGrid[brickIndexUnderBall] = false;
+                    ballSpeedY *= -1;
+                }
+            }
+
             var paddleTopEdgeY = canvas.height-PADDLE_DIST_FROM_EDGE;
             var paddleBottomEdgeY = paddleTopEdgeY + PADDLE_THICKNESS;
             var paddleLeftEdgeX = paddleX;
@@ -109,14 +125,18 @@
             } 
         }
 
+        function rowColToArrayIndex(col, row) {
+            return col + BRICK_COLS * row;
+        }
+
         function drawBricks() {
             for(var eachRow=0;eachRow<BRICK_ROWS; eachRow++) {
                 for(var eachCol=0;eachCol<BRICK_COLS; eachCol++) {
 
-                    var arrayIndex = BRICK_COLS * eachRow + eachCol;
+                    var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
                     if(brickGrid[arrayIndex]) {
                         colorRect(BRICK_W*eachCol,BRICK_H*eachRow, 
-                        BRICK_W-BRICK_GAP, BRICK_H-BRICK_GAP, 'blue');
+                            BRICK_W-BRICK_GAP, BRICK_H-BRICK_GAP, 'blue');
                     } // end of is this brick here
                 } // end of for each brick
             }
@@ -130,11 +150,6 @@
             colorRect(paddleX, canvas.height-PADDLE_DIST_FROM_EDGE, PADDLE_WIDTH, PADDLE_THICKNESS, 'white'); // draw paddle
         
             drawBricks();
-
-            var mouseBrickCol = Math.floor(mouseX / BRICK_W);
-            var mouseBrickRow = Math.floor(mouseY / BRICK_H);
-            colorText(mouseBrickCol+","+mouseBrickRow, mouseX,mouseY, 'yellow');
-        
         }
 
         function colorRect(topLeftX, topLeftY, boxWidth, boxHeight, fillColor) {
