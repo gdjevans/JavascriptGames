@@ -9,8 +9,7 @@ body { background-color: #fff; padding: 20px; }
    position: relative;
    overflow: hidden;
    color: #fff;
-   background: #000 url(../images/background.jpg) no-repeat 0px 0px;
-
+   
 }
 
 #myQuiz h1 {
@@ -29,6 +28,15 @@ body { background-color: #fff; padding: 20px; }
    font-family: 'Titillium Web', sans-serif;
    font-size: 3.2em;
    line-height: 65px;
+}
+
+#myQuiz h1 .mainTitle {
+   display: block;
+   font-weight: 900;
+   font-family: 'Titillium Web', sans-serif;
+   font-size: 3.2em;
+   line-height: 80px;
+   text-align: center;
 }
 
 #myQuiz h2 {
@@ -360,3 +368,4 @@ body { background-color: #fff; padding: 20px; }
       left: -650px; 
    }
 }
+

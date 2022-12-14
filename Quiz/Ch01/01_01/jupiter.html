@@ -8,9 +8,9 @@
 	</head>
 	<body>
 
-		<div id="myQuiz" ng-controller="QuizController">
+		<div id="myQuiz" style="background: #000 url(../images/background_jupiter.jpg) no-repeat 0px 0px;"  ng-controller="QuizController">
 			
-			<h1>Test Your Knowledge:<span>Saturn</span></h1>
+			<h1>Test Your Knowledge:<span>Jupiter</span></h1>
 			<div class="progress"> 
 				<div class="
 					{{ ($index === activeQuestion) ? 'on' : 'off' }} 
@@ -21,7 +21,7 @@
 			</div>
 			<div class="intro {{ (activeQuestion > -1) ? 'inactive' : 'active' }}">
 				<h2>Welcome</h2>
-				<p>Click begin to test your knowledge of Saturn.</p>
+				<p>Click begin to test your knowledge of Jupiter.</p>
 				<p class="btn" ng-click="activeQuestion = 0">Begin</p>
 			</div>
 			<div class="question 
@@ -55,11 +55,16 @@
 				<p>Use the links below to challenge your friends.</p>
 				<div class="share" ng-bind-html="createShareLinks(percentage)">
 				</div>
+				<br />
+				<br />
+				<br />
+				<br />
+				<a class="btn" href="main.html">Return to main</a>
 			</div>
 		</div>
 		
 		<script type="text/javascript" src="js/angular.min.js"></script>
-		<script type="text/javascript" src="js/quiz.js"></script>
+		<script type="text/javascript" src="js/jupiter_quiz.js"></script>
 
 	</body>
 </html>

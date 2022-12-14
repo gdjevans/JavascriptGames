@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html ng-app="myQuiz">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+		<title>Test Your Knowledge: With Planets</title>
+		<link rel="stylesheet" type="text/css" href="css/quiz.css">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+
+		<div id="myQuiz" style="background: #000 url(../images/background_main.jpg) no-repeat 0px 0px;"  ng-controller="QuizController">
+			<div class="quizTitle">
+				<h1>Test Your Knowledge:<span class="mainTitle">With The Planets</span></h1>
+			</div>
+			<br />
+			<div class="quizBtns"> 
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="../images/mercury_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../images/venus_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../images/earth_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../images/mars_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../images/jupiter_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../images/neptune_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../images/uranus_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="../images/pluto_btn.jpg" class="d-block w-30" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		
+		
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<!--<script type="text/javascript" src="js/jupiter_quiz.js"></script>-->
+
+	</body>
+</html>

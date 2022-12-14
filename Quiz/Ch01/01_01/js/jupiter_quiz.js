@@ -9,7 +9,7 @@
 		$scope.activeQuestionAnswered =0;
 		$scope.percentage = 0;
 
-		$http.get('quiz_data.json').then(function(quizData){
+		$http.get('../json/quiz_jupiter_data.json').then(function(quizData){
 			$scope.myQuestions = quizData.data;
 			$scope.totalQuestions = $scope.myQuestions.length;
 		});
@@ -50,9 +50,9 @@
 
 			var url = 'http://gdjevans.com/apps/quizzes';
 
-			var emailLink = '<a class="btn email" href="mailto:?subject=Try to beat my quiz score!&amp;body=I scored a '+percentage+'% on this quiz about Saturn. Try to beat my score at '+url+'">Email a friend</a>';
+			var emailLink = '<a class="btn email" href="mailto:?subject=Try to beat my quiz score!&amp;body=I scored a '+percentage+'% on this quiz about Jupiter. Try to beat my score at '+url+'">Email a friend</a>';
 
-			var twitterLink = '<a class="btn twitter" href="http://twitter.com/share?text=I scored a '+percentage+'% on this quiz about Saturn. Try to beat my score at&amp;hashtags=SaturnQuiz&amp;url='+url+'">Tweet your score</a>';
+			var twitterLink = '<a class="btn twitter" href="http://twitter.com/share?text=I scored a '+percentage+'% on this quiz about Jupiter. Try to beat my score at&amp;hashtags=SaturnQuiz&amp;url='+url+'">Tweet your score</a>';
 
 			var newMarkup = emailLink + twitterLink;
 
