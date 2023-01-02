@@ -32,7 +32,7 @@ const sketch = () => {
 
     for(let i = 0; i < num; i++)
     {
-      const slice = math.degToRad(360) / num;
+      const slice = math.degToRad(360 / num);
       const angle = slice * i;
 
       x = cx + radius * Math.sin(angle);
@@ -55,7 +55,7 @@ const sketch = () => {
       context.lineWidth = random.range(5, 20);
 
       context.beginPath();
-      context.arc(0, 0, radius * random.range(0.7, 0.3), slice * random.range(1, -8), slice * random.range(1, 5));
+      context.arc(0, 0, radius * random.range(0.7, 1.3), slice * random.range(1, -8), slice * random.range(1, 5));
       context.stroke();
       context.restore();
     }
