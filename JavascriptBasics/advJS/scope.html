@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scope</title>
+    <script>
+        var first = "John";
+
+        function first_name()
+        {
+            var second = "Smith";
+            document.write(first+ " " + second);
+        }
+
+        first_name();
+
+        document.write(first);
+        document.write(second);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

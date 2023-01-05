@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Insert Values</title>
+</head>
+<body>
+    <form id="form1" onsubmit="">
+
+        Title: <input type="text" id="title1" size="25"><br /><br />
+        Description: <input type="text" id="desc1" size="55"><br /><br />
+        <input type="button" value="Submit" onclick="writedoc();"/>
+
+    </form>
+    <script>
+        function writedoc(){
+            var title = document.getElementById("title1").value;
+            var desc = document.getElementById("desc1").value;
+
+            document.write("<h3>Title: </h3>" + title + "<br />");
+            document.write("<h3>Description: </h3>" + desc);
+        }
+
+    </script>
+</body>
+</html>

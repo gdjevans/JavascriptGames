@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM</title>
+    
+</head>
+<body>
+    <h1>Title News</h1>
+    <h2>These is today's news</h2>
+    <div id="news1">Today's news nothing special. Please come back tomorrow....</div>
+<script>
+
+        var firstElement = document.getElementById("news1").innerHTML;
+        alert(firstElement);
+        //get images
+        //document.images[0]
+        var parent = document.childNodes[0];
+        alert(parent.nodeName);
+
+    </script>
+</body>
+</html>

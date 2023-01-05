@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <script>
+
+        var cars = new Array("Ferrari", "Mercedes", "Ford", "Range Rover");
+
+        document.write(cars[0]);
+        document.write("<br/>");
+        document.write(cars.length);
+        document.write("<br/>");
+        for (i=0; i<cars.length; i++){
+
+            document.write(cars[i]);
+            document.write("<br/>");
+        }
+        
+        document.write("<br/><br/>");
+
+        var cars2 = ["Ferrari", "Mercedes", "BMW"];
+
+        document.write(cars2.length);
+
+        cars2[1] = "Ford";
+        cars2.length = 2;
+        for (i=0; i<cars2.length; i++){
+
+            document.write(cars2[i]);
+            document.write("<br/>");
+        }
+
+        document.write("<br/><br/>");
+        
+        var city = ["New York", "Miami", "Lisbon", "Madrid"];
+
+        document.write(city.reverse());
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
