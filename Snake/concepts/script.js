@@ -95,3 +95,108 @@ let isHere = false;
 
 // let valSum = sumNum(numFirst, numSecond);
 // alert("the sum of the number " + valSum)
+
+//DOM manipulation
+//Document Object Model 
+
+document.getElementById("para1").innerText = "hello, how are you?";
+
+let para = document.getElementById("para1");
+para.innerText = "Hello, how are you;"; 
+
+// Click event
+
+function buttonClick() {
+    alert("Thanks for clicking the fabulous button");
+}
+
+
+//addEventListener()
+
+//document.getElementById("button1").addEventListener("click", buttonClick);
+
+let button = document.getElementById("button1");
+button.addEventListener("click", buttonClick);
+
+let mouseTest = document.getElementById("mouseTest");
+mouseTest.addEventListener("mousedown", downEvent);
+mouseTest.addEventListener("mouseup", upEvent);
+mouseTest.addEventListener("mousemove", moveEvent);
+
+function downEvent() {
+    mouseTest.style.backgroundColor = "yellow";
+}
+
+function upEvent() {
+    mouseTest.style.backgroundColor = "red";
+}
+
+function moveEvent() {
+    mouseTest.style.backgroundColor = "green";
+}
+// OBJECTS
+// let person1 = {Name:"Susan", Age:35, Height:160, Hair:"blonde"};
+// let Person2 = {Name:"Gary", Age:41, Height: 180, Hair:"blonde", Eye:"blue"};
+
+// 1. objectName.propertyName
+// 2. objectName["propertyName"]
+
+// alert(person1.Height);
+// alert(person1["Age"]);
+
+// let person = [{Name:"Susan", Age:35, Height:160, Hair:"blonde"}, {Name:"Gary", Age:41, Height: 180, Hair:"blonde", Eye:"blue"}];
+
+// alert(person[1].Eye);
+
+// CANVAS
+// Step 1: Finding the canvas on which you want to draw on.
+
+let canvas = document.getElementById("canvas1");
+
+// Step 2: Create a drawing object.
+
+let ctx = canvas.getContext("2d");
+
+// Step 3: Drawing on canvas - lines - colouring
+
+ctx.moveTo(10,10);
+ctx.lineTo(90,100);
+
+ctx.strokeStyle = "red";
+ctx.stroke();
+
+// Step 4: Drawing on canvas - multiline path
+
+//path
+ctx.beginPath();
+
+ctx.moveTo(100,100);
+ctx.lineTo(200, 200);
+ctx.moveTo(100,100);
+ctx.lineTo(100, 200);
+ctx.lineTo(200, 200);
+ctx.strokeStyle = "green";
+ctx.stroke();
+
+ctx.closePath();
+
+ctx.beginPath();
+
+ctx.moveTo(300,300);
+ctx.lineTo(300,400);
+ctx.lineTo(400,400);
+ctx.lineTo(300,300);
+// ctx.strokeStyle = "blue";
+// ctx.stroke();
+ctx.fillStyle = "blue";
+ctx.fill();
+
+ctx.closePath();
+
+//arcs
+
+ctx.beginPath();
+ctx.arc(300, 150, 50, 0, Math.PI, true);
+ctx.fillStyle = "yellow";
+ctx.fill();
+ctx.closePath();
