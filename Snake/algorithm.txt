@@ -1,0 +1,13 @@
+Snake Game Algorithum:
+
+1. Create the snake - array - first part (0 index) holds the head - the rest of the body is held in the array - empty array.
+
+2. New game button, pause button - on clicking new game - game starts.
+
+3. Draw the head of the snake - center of the screen - and then the apple in a random position.
+
+4. Make the snake move - any four of the arrow keys, it just moves in that direction - automatically - until we change the direction - only forward - setInterval.
+
+5. Check for eating - superimposing - if the x and y coordinates of snakes head superimposes the x and y value of the apple - snake ate the apple - it'll get a new tail - grow - increase in score by one.
+
+6. Check for collosion - should not collide with the four walls and with its own body.
