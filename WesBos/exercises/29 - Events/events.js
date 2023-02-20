@@ -1,35 +1,52 @@
-/* eslint-disable */
 const butts = document.querySelector('.butts');
 const coolButton = document.querySelector('.cool');
 
 function handleClick() {
-  console.log('IT GOT CLICKED!!!');
+  console.log('🐛 IT GOT CLICKED!!!');
 }
 
-const hooray = () => console.log('HOORAY!!');
+const hooray = () => console.log('HOORAY!');
 
-butts.addEventListener('click', handleClick);
+butts.addEventListener('click', () => {
+  console.log('Im an anon!');
+});
 coolButton.addEventListener('click', hooray);
 
-// butts.removeEventListener('click', handleClick);
+butts.removeEventListener('click', handleClick);
 
-//Listen on multiple items
-
+// Listen on multiple items
 const buyButtons = document.querySelectorAll('button.buy');
 
-function buyItems() {
-    console.log('BUYING ITEM!!!');
+function handleBuyButtonClick(event) {
+  console.log('You clicked a button!');
+  const button = event.target;
+  console.log(button.textContent);
+  // console.log(parseFloat(event.target.dataset.price));
+  console.log(event.target);
+  console.log(event.currentTarget);
+  console.log(event.target === event.currentTarget);
+  // Stop this event from bubbling up
+  // event.stopPropagation();
 }
+buyButtons.forEach((buyButton) => {
+  buyButton.addEventListener('click', handleBuyButtonClick);
+});
 
-// buyButtons.addEventListener('click', buyItems);
+window.addEventListener(
+  'click',
+  (event) => {
+    console.log('YOU CLICKED THE WINDOW');
+    console.log(event.target);
+    console.log(event.type);
+    // event.stopPropagation();
+    console.log(event.bubbles);
+  },
+  { capture: true }
+);
 
-buyButtons.forEach(function(buyButton) {
-    console.log('Binding the buyButton');
-    buyButton.addEventListener('click', buyItems);
-})
+const photoEl = document.querySelector('.photo');
 
-buyButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        console.log('YOU CLICKED IT');
-    });
-})
+photoEl.addEventListener('mouseenter', (e) => {
+  console.log(e.currentTarget);
+  console.log(this);
+});
