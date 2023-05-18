@@ -1,0 +1,23 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+html, body{
+	background: #808080;
+}
+
+#main_wrapper{
+	width: 460px;
+	margin: 20px auto;  
+}
+
+#main{
+	background-color: #808080;
+}
+
+#game_canvas{
+    margin: 0px;
+	width: 460px;
+}
+
