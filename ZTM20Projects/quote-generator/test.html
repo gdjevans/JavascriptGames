@@ -1,0 +1,38 @@
+<html>
+    <head>
+    <title>Your Website Title</title>
+    <!-- You can use Open Graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="http://www.gdjevans.com/reviews/reviews.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="reviews" />
+    <meta property="og:description"   content="Film reviews" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- Your share button code -->
+    <div class="fb-share-button" 
+    data-href="http://www.gdjevans.com/reviews/reviews.html" 
+    data-layout="button_count">
+    </div>
+
+    <button class="facebook-button" id="facebook" title="Post This!">
+        <i class="fab fa-facebook fb-share-button" id="fbShare"
+        data-href="http://www.gdjevans.com/reviews/reviews.html" 
+        data-layout="button_count"></i>
+    </button>
+    
+    </body>
+    </html>
