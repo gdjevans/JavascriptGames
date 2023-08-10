@@ -25,24 +25,42 @@ function writeToLog(operationIdentifier, prevResult, operationNumber, newResult)
 }
 
 function calculateResult(calculationType) {
-    const enteredNumber = getUserNumberInput();
-    const initalResult = currentResult;
-    let mathOperator;
-    if (calculationType === 'ADD') {
-        currentResult += enteredNumber;
-        mathOperator = '+';
-    } else if (calculationType === 'SUBTRACT') {
-        currentResult -= enteredNumber;
-        mathOperator = '-';
-    } else if (calculationType === 'MULTIPLY') {
-        currentResult *= enteredNumber;
-        mathOperator = '*';
-    } else if (calculationType === 'DIVIDE') {
-        currentResult /= enteredNumber;
-        mathOperator = '/';
+    if (
+        calculationType !== 'ADD' && 
+        calculationType !== 'SUBTRACT' &&
+        calculationType !== 'MULTIPLY' &&
+        calculationType !== 'DIVIDE' ||
+        !enteredNumber
+    ) {
+        return;
     }
-    createandWriteOutput(mathOperator, initalResult, enteredNumber);
-    writeToLog(calculationType, initalResult, enteredNumber, currentResult);
+
+    // if (
+    //     calculationType === 'ADD' || 
+    //     calculationType === 'SUBTRACT' ||
+    //     calculationType === 'MULTIPLY' ||
+    //     calculationType === 'DIVIDE'
+    // ) {
+        const enteredNumber = getUserNumberInput();
+        const initalResult = currentResult;
+        let mathOperator;
+        if (calculationType === 'ADD') {
+            currentResult += enteredNumber;
+            mathOperator = '+';
+        } else if (calculationType === 'SUBTRACT') {
+            currentResult -= enteredNumber;
+            mathOperator = '-';
+        } else if (calculationType === 'MULTIPLY') {
+            currentResult *= enteredNumber;
+            mathOperator = '*';
+        } else if (calculationType === 'DIVIDE') {
+            currentResult /= enteredNumber;
+            mathOperator = '/';
+        }
+    
+        createandWriteOutput(mathOperator, initalResult, enteredNumber);
+        writeToLog(calculationType, initalResult, enteredNumber, currentResult);
+    // }
 }
 
 function add() {
