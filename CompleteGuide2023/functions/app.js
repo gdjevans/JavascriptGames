@@ -80,3 +80,35 @@ startGameBtn.addEventListener('click', () => {
     alert(message);
     gameIsRunning = false;
 });
+
+
+// not related to game
+
+const sumUp = (resultHandler, ...numbers) => {
+
+    const valdidateNumber = (number) => {
+        return isNaN(number) ? 0 : number;
+    };
+
+    let sum = 0;
+    for (const num of numbers) {
+        sum += valdidateNumber(num);
+    }
+    resultHandler(sum);
+};
+
+const subtractUp = function(resultHandler, ...numbers) {
+    let sum = 0;
+    for (const num of numbers) { 
+        sum -= num;
+    }
+    return resultHandler(sum);
+};
+
+const showResult = (result) => {
+    alert('The result after adding all the numbers is: ' + result);
+}
+
+sumUp(showResult, 1, 5, 10, -3, 6, 10);
+sumUp(showResult, 1, 5, 10, -3, 6, 10, 25, 88);
+subtractUp(1, 10, 15, 20);
