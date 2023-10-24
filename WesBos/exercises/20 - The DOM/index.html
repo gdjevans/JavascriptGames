@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The DOM</title>
+  <link rel="stylesheet" href="../../base.css">
+</head>
+
+<body>
+  <p class="wes">I am wes, I <em>love</em> to bbq</p>
+  <img class="nice" src="https://source.unsplash.com/random/600x600" />
+  <div class="items">
+    <p>Hi I'm a item</p>
+    <div class="item">
+      <h2>
+        Sub Div
+        <span>I am hidden!</span>
+      </h2>
+      <p>Hi I'm a item</p>
+      <img class="custom" data-last="bos" data-name="wes" src="https://source.unsplash.com/random/200x200" />
+      <img data-name="kait" src="https://source.unsplash.com/random/200x200" />
+      <img data-name="lux" src="https://source.unsplash.com/random/200x00" />
+
+    </div>
+    <div class="item item2">
+      <h2>Sub Div</h2>
+      <p>Hi I'm a item</p>
+      <img src="https://source.unsplash.com/random/300x300" />
+
+    </div>
+    
+    
+    <p>Hi I'm a item</p>
+    <p>Hi I'm a item</p>
+    <article class="item">
+      <h2>Im an article</h2>
+      <p class="pizza">This is how many pizzas I ate!</p>
+    </article>
+  </div>
+  <style>
+    h2 span {
+      display:none;
+    }
+
+    img {
+      transition: all 0.2s;
+    }
+
+    .round {
+      border-radius: 50%;
+      transform: rotate(1turn) scale(2);
+      box-shadow: 0 0 10px;
+    }
+  </style>
+  <script src="./traversing.js"></script>
+</body>
+
+</html>
