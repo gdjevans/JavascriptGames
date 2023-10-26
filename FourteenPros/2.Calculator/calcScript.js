@@ -16,5 +16,4 @@ document.addEventListener('keydown', (event) => {
     else if(event.key == ".") {calc.display.value+='.'}
     else if(event.key == "c") {calc.display.value=''}
     else if(event.key == "Enter") {calc.display.value=eval(calc.display.value)}
-   
 });
