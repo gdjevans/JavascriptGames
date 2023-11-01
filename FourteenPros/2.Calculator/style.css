@@ -1,0 +1,121 @@
+input {
+    width: 2.05em;
+    height: 1.5em;
+    font-size: 4em;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #000;
+    color: #fff;
+    border-style: none;
+    transition: background 0.1s linear 0s;
+}
+
+/* input:hover {
+  background: #E2C2FD;
+  transition: background 0.2s linear 0s;
+}  */
+
+input:active {
+  background: #707070;
+  /* background: #4857bb; */
+  transition: background 0.1s linear 0s;
+}
+
+.clearBtn {
+    background-color: #cc0000;
+}
+
+.plusBtn {
+    background-color: #ce7133;
+}
+
+.subtractBtn {
+    background-color: #ba55d3;
+}
+
+.multiplyBtn {
+    background-color: #7db1b2;
+}
+
+.divideBtn {
+    background-color: rgb(69, 146, 69);
+}
+
+.displayScreen {
+    width:10em; 
+    height:1.5em; 
+    text-align:center; 
+    background-color:#bec0c0;
+    border: #707070;
+}
+
+#formInput {
+    width: 60%;
+    margin-left: 10em;
+    margin-top: 20px;
+    /* border: medium solid purple; */
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    margin-right: 150px;
+    margin-top: 20px;
+}
+
+#formInput .button {
+    position: relative;
+    background-color: #04AA6D;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #formInput .button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  #formInput .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  @media (max-width:490px) {
+    input {
+        width: 1.5em;
+        height: 1.5em;
+        font-size: 2em;
+        border-radius: 10px;
+        margin: 0.2em;
+        background-color: #000000;
+        color: #fff;
+        border-style: none;
+        transition: background 0.1s linear 0s;
+    }
+
+    #formInput {
+        width: 60%;
+        margin-left: 2em;
+        margin-top: 20px;
+        /* border: medium solid purple; */
+    }
+  }
