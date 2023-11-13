@@ -54,6 +54,58 @@
             }
         });
         console.groupEnd();
+
+        console.clear();
+
+        const isCool = true;
+
+        // if (isCool) {
+
+        // } else {
+        //     console.log('you are not cool');
+        // }
+
+        if (!isCool) {
+            console.log('You are not cool');
+        }
+
+        //Ternary
+        const count = 2;
+        // let word;
+        // if(count === 1) {
+        //     word = 'item';
+        // } else {
+        //     word = 'items';
+        // }
+
+        //1.Condition
+        //2. what to do if true.
+        //3. what to do if false.
+
+        const word = count === 1 ? 'item' : 'items';
+        const sentnence = `You have ${count} ${word} in your cart`;
+        console.log(sentence);
+
+        // Short circuiting
+        function check1() {
+            console.log('Running check 1');
+            return true;
+        }
+        function check2() {
+            console.log('Running check 2');
+            return true;
+        }
+        function check3() {
+            console.log('Running check 3');
+            return true;
+        }
+        if (check1() && check2() && check3()) {
+            console.log ('All checks passed');
+        } else {
+            console.log('Some checks failed');
+        }
+
+
     </script>
 </body>
 </html>
