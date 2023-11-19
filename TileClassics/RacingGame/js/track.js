@@ -44,56 +44,40 @@ function carTrackHandling() {
     if(carTrackCol >= 0 && carTrackCol < TRACK_COLS &&
     carTrackRow >= 0  && carTrackRow < TRACK_ROWS) {
         if(isObstacleAtColRow( carTrackCol,carTrackRow )) {
+			// next two lines added to fix a bug, mentioned in video 9.6
+			// undoes the car movement which got it onto the wall
             carX -= Math.cos(carAng) * carSpeed;
             carY -= Math.sin(carAng) * carSpeed;
 
             carSpeed *= -0.5;
             
-        } // end of track found.
-    } // end of valid col and row.
-} // end of carTrackHandling func.
+		} // end of track found
+	} // end of valid col and row
+} // end of carTrackHandling func
 
 function rowColToArrayIndex(col, row) {
     return col + TRACK_COLS * row;
 }
 
 function drawTracks() {
-    for(let eachRow=0;eachRow<TRACK_ROWS; eachRow++) {
-        for(let eachCol=0;eachCol<TRACK_COLS; eachCol++) {
+    let arrayIndex = 0;
+    let drawTileX = 0;
+    let drawTileY = 0;
+	for(var eachRow=0;eachRow<TRACK_ROWS;eachRow++) {
+		for(var eachCol=0;eachCol<TRACK_COLS;eachCol++) {
 
-            let arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-            let tileKindHere = trackGrid[arrayIndex];
-            let useImg;
+		    arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
+			var tileKindHere = trackGrid[arrayIndex];
+			var useImg = trackPics[tileKindHere];
 
-            switch(tileKindHere) {
-                case TRACK_ROAD:
-                    useImg = roadPic;
-                    break;
-                case TRACK_WALL:
-                    useImg = wallPic; 
-                    break;
-                case TRACK_GOAL:
-                    useImg = goalPic
-                    break;
-                case TRACK_TREE:
-                    useImg = treePic; 
-                    break;
-                case TRACK_FLAG:
-                    useImg = flagPic; 
-                    break;
-            }
+			canvasContext.drawImage(useImg,drawTileX,drawTileY);
 
-            canvasContext.drawImage(useImg,TRACK_W*eachCol,TRACK_H*eachRow);
-
-
-            if(tileKindHere == TRACK_ROAD) {
-                canvasContext.drawImage(roadPic,TRACK_W*eachCol,TRACK_H*eachRow); 
-                // colorRect(TRACK_W*eachCol,TRACK_H*eachRow, 
-                //     TRACK_W-TRACK_GAP, TRACK_H-TRACK_GAP, 'blue');
-            } else if (tileKindHere == TRACK_WALL) {
-                canvasContext.drawImage(wallPic,TRACK_W*eachCol,TRACK_H*eachRow); 
-            }
+            drawTileX += TRACK_W;
+            arrayIndex++;
 
         } // end of for each col
+		drawTileY += TRACK_H;
+        drawTileX = 0;
     } // end of for each row
-} // end of drawTrack func
+
+} // end of drawTracks func
