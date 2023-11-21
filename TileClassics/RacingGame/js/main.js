@@ -18,8 +18,14 @@ function imageLoadingDoneSoStartGame() {
     setInterval(updateAll, 1000/framesPerSecond);
     
     setupInput();
-    greenCar.reset(otherCarPic);
-    blueCar.reset(carPic);
+    
+    loadLevel(levelOne);
+}
+
+function loadLevel(whichLevel) {
+    trackGrid = whichLevel.slice();
+    greenCar.reset(otherCarPic, "Green Car");
+    blueCar.reset(carPic, "Blue Car");
 }
 
 function updateAll() {
