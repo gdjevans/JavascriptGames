@@ -3,8 +3,9 @@
 //import Matter from "matter-js";
 import { Player } from './player.js';
 import { Zombie } from './zombie.js';
+import { Spawner } from './spawner.js';
 
-const canvasSize = 256;
+const canvasSize = 512;
 const canvas = document.getElementById("mycanvas");
 const app = new PIXI.Application({
   view: canvas,
@@ -14,9 +15,9 @@ const app = new PIXI.Application({
 });
 
 let player = new Player({app});
-let zombie = new Zombie({app, player});
+let zSpawner = new Spawner({create: () => new Zombie({app, player})});
 
 app.ticker.add((delta) => {
   player.update();
-  zombie.update();
+  zSpawner.spawns.forEach(zombie => zombie.update());
 });
