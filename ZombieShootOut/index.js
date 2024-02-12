@@ -5,6 +5,7 @@ import { Player } from './player.js';
 import { Zombie } from './zombie.js';
 import { Spawner } from './spawner.js';
 
+
 const canvasSize = 512;
 const canvas = document.getElementById("mycanvas");
 const app = new PIXI.Application({
