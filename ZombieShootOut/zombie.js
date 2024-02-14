@@ -28,6 +28,14 @@ export class Zombie {
         this.zombie.position.set(this.zombie.position.x + v.x,this.zombie.position.y + v.y);
     }
 
+    kill() {
+        this.app.stage.removeChild(this.zombie);
+    }
+
+    get position() {
+        return this.zombie.position;
+    }
+
     randomSpawnPoint() {
         let edge = Math.floor(Math.random() * 4); // Generate random int between 0 and 3
         let spawnPoint = new Victor(0, 0);
