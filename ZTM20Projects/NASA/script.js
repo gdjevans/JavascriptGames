@@ -27,7 +27,6 @@ function showContent(page) {
 
 function createDOMNodes(page) {
     const currentArray = page === 'results' ? resultsArray : Object.values(favorites);
-    console.log('CurrentArray', page, currentArray);
     currentArray.forEach((result) => {
         // Card container
         const card = document.createElement('div');
@@ -94,12 +93,14 @@ function updateDOM (page) {
 }
 
 //  Get 10 Images from NSAA API
-async function getNASAPictures() {
+async function getNasaPictures() {
+    // Show Loader
+    loader.classList.remove('hidden');
     try{
         const response = await fetch(apiUrl);
         resultsArray = await response.json();
         // console.log(resultsArray);
-        updateDOM('favorites');
+        updateDOM('results');
     } catch(error) {
         // Catch error here
     }
@@ -133,4 +134,4 @@ function removeFavorite(itemUrl) {
 }
 
 // On Load
-getNASAPictures();
+getNasaPictures();
