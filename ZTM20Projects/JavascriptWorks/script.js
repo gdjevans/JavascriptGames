@@ -20,7 +20,7 @@ function findUser(user) {
     return `found ${user.firstName} ${user.lastName}`;
 }
 
-const userData {
+const userData = {
     firstName: 'Johnson',
     lastName: 'Junior'
 }
